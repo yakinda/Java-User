@@ -37,7 +37,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST, value = "store")
     public String store(@ModelAttribute User user, @RequestParam("file") MultipartFile file) {
         String url = userService.saveFile(file);
-        user.setAvatar(url);
+        user.setImgUrl(url);
         userRepo.save(user);
 
         return "redirect:/users";
@@ -58,7 +58,7 @@ public class UserController {
         user.setAge(userModel.getAge());
         user.setAddress(userModel.getAddress());
         user.setDob(userModel.getDob());
-        user.setAvatar(url);
+        user.setImgUrl(url);
         userRepo.save(user);
         return "redirect:/users";
     }

@@ -18,5 +18,5 @@ public class User {
     private String address;
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dob;
-    private String avatar;
+    private String imgUrl;
 }
